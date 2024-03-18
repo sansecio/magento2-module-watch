@@ -2,16 +2,35 @@
 
 namespace Sansec\Cspmon\Model;
 
+use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\App\RequestInterface;
 
 class Config
 {
-    private ?bool $shouldReport;
+    private const CONFIG_PATH_ENDPOINT    = 'cspmon/settings/endpoint';
+    private const CONFIG_PATH_SAMPLE_RATE = 'cspmon/settings/sample_rate';
 
-    public function __construct(RequestInterface $request)
+    private ?bool $shouldReport;
+    private ScopeConfigInterface $scopeConfig;
+    private RequestInterface $request;
+
+    public function __construct(RequestInterface $request, ScopeConfigInterface $scopeConfig)
     {
-        $this->shouldReport = strpos($request->getModuleName(), 'checkout') !== false &&
-            true; // TODO: rand(1, 100) === 1 from config
+        $this->scopeConfig = $scopeConfig;
+        $this->request = $request;
+
+        $this->shouldReport = $this->isCheckout() && $this->isSample();
+    }
+
+    private function isSample(): bool
+    {
+        $sampleRate = (int) $this->scopeConfig->getValue(self::CONFIG_PATH_SAMPLE_RATE);
+        return rand(1, 100) <= $sampleRate;
+    }
+
+    private function isCheckout(): bool
+    {
+        return strpos($this->request->getModuleName() ?? '', 'checkout') !== false;
     }
 
     public function shouldReport(): bool
@@ -19,9 +38,8 @@ class Config
         return $this->shouldReport;
     }
 
-    public function getReportUri(): ?string
+    public function getCspEndpoint(): string
     {
-        // TODO: pull this from config
-        return 'https://csp.rubic.nl/report/511679bd-6fe2-4ca7-9b13-cde0d40cbcbd';
+        return $this->scopeConfig->getValue(self::CONFIG_PATH_ENDPOINT);
     }
 }

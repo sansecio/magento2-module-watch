@@ -24,7 +24,7 @@ class AddReportHeaders implements ObserverInterface
 
         $response->setHeader(
             'Reporting-Endpoints',
-            sprintf('csp-endpoint=\'%s\'', $this->config->getReportUri()),
+            sprintf('csp-endpoint=\'%s\'', $this->config->getCspEndpoint()),
             true
         );
 
