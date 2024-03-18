@@ -1,1 +1,1 @@
-# magento2-module-cmon
+# magento2-module-cspmon

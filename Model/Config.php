@@ -1,20 +1,27 @@
 <?php
 
-namespace Sansec\Cmon\Model;
+namespace Sansec\Cspmon\Model;
+
+use Magento\Framework\App\RequestInterface;
 
 class Config
 {
-    public function shouldReportToSansec(): bool
-    {
-        return true; // dev
+    private ?bool $shouldReport;
 
-        // TODO: pull this from config
-        return rand(1, 100) === 1;
+    public function __construct(RequestInterface $request)
+    {
+        $this->shouldReport = strpos($request->getModuleName(), 'checkout') !== false &&
+            true; // TODO: rand(1, 100) === 1 from config
     }
 
-    public function getSansecReportUri(): ?string
+    public function shouldReport(): bool
+    {
+        return $this->shouldReport;
+    }
+
+    public function getReportUri(): ?string
     {
         // TODO: pull this from config
-        return 'http://localhost:3000/report/511679bd-6fe2-4ca7-9b13-cde0d40cbcbd';
+        return 'https://csp.rubic.nl/report/511679bd-6fe2-4ca7-9b13-cde0d40cbcbd';
     }
 }

@@ -1,10 +1,7 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <type name="Magento\Csp\Api\ModeConfigManagerInterface">
-        <plugin name="csp_configuration_plugin" type="Sansec\Cmon\Plugin\CspConfigurationPlugin"/>
-    </type>
-    <type name="Magento\Csp\Model\Collector\Config\FetchPolicyReader">
-        <plugin name="none_policy_configuration" type="Sansec\Cmon\Plugin\NonePolicyConfiguration"/>
+    <type name="Magento\Csp\Observer\Render">
+        <plugin name="disable_original_report" type="Sansec\Cspmon\Plugin\DisableOriginalReport" />
     </type>
 </config>

@@ -1,5 +1,5 @@
 {
-  "name": "sansec/magento2-module-cmon",
+  "name": "sansec/magento2-module-cspmon",
   "type": "magento2-module",
   "require": {
     "magento/framework": "*"
@@ -9,7 +9,7 @@
       "registration.php"
     ],
     "psr-4": {
-      "Sansec\\Cmon\\": ""
+      "Sansec\\Cspmon\\": ""
     }
   }
 }
