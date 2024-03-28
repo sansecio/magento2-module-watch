@@ -3,7 +3,6 @@
 namespace Sansec\Cspmon\Model;
 
 use Magento\Framework\App\Config\ScopeConfigInterface;
-use Magento\Framework\App\RequestInterface;
 
 class Config
 {
@@ -13,14 +12,11 @@ class Config
 
     private ?bool $shouldReport;
     private ScopeConfigInterface $scopeConfig;
-    private RequestInterface $request;
 
-    public function __construct(RequestInterface $request, ScopeConfigInterface $scopeConfig)
+    public function __construct(ScopeConfigInterface $scopeConfig)
     {
         $this->scopeConfig = $scopeConfig;
-        $this->request = $request;
-
-        $this->shouldReport = $this->isCheckout() && $this->isSample();
+        $this->shouldReport = $this->getEndpoint() !== null && $this->isSample();
     }
 
     private function isSample(): bool
@@ -29,17 +25,12 @@ class Config
         return rand(1, 100) <= $sampleRate;
     }
 
-    private function isCheckout(): bool
-    {
-        return strpos($this->request->getModuleName() ?? '', 'checkout') !== false;
-    }
-
     public function shouldReport(): bool
     {
         return $this->shouldReport;
     }
 
-    public function getEndpoint(): string
+    public function getEndpoint(): ?string
     {
         return $this->scopeConfig->getValue(self::CONFIG_PATH_ENDPOINT);
     }

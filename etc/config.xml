@@ -3,8 +3,8 @@
     <default>
         <cspmon>
             <settings>
-                <endpoint>https://csp.rubic.nl/report/49cd8de3-f8fd-4d4d-b0a6-3917a27545fc</endpoint>
-                <sample_rate>100</sample_rate>
+                <endpoint></endpoint>
+                <sample_rate>5</sample_rate>
             </settings>
             <directives>
                 <default_src>
