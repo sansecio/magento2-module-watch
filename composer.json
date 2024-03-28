@@ -11,5 +11,13 @@
     "psr-4": {
       "Sansec\\Cspmon\\": ""
     }
+  },
+  "repositories": [
+    {"type": "composer", "url": "https://mirror.mage-os.org/"}
+  ],
+  "config": {
+    "allow-plugins": {
+      "magento/composer-dependency-version-audit-plugin": true
+    }
   }
 }
