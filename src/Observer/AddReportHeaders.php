@@ -30,19 +30,15 @@ class AddReportHeaders implements ObserverInterface
 
     public function execute(Observer $observer)
     {
-        $this->getReportPolicy();
-
-        $response = $observer->getEvent()->getData('response');
         if (!$this->config->shouldReport()) {
             return;
         }
-
+        $response = $observer->getEvent()->getData('response');
         $response->setHeader(
             "Reporting-Endpoints",
             sprintf('csp-endpoint="%s"', $this->config->getEndpoint()),
             true
         );
-
         $response->setHeader(
             "Content-Security-Policy-Report-Only",
             sprintf("%s report-to csp-endpoint", $this->getReportPolicy()),
