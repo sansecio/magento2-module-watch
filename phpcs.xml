@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<ruleset name="Custom Standard">
+  <rule ref="vendor/magento/magento-coding-standard/Magento2/ruleset.xml">
+    <exclude name="Magento2.Commenting.ClassPropertyPHPDocFormatting.Missing" />
+    <exclude name="Magento2.Annotation.MethodAnnotationStructure.NoCommentBlock" />
+  </rule>
+</ruleset>
