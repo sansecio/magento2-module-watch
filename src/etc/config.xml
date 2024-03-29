@@ -1,11 +1,14 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
-        <cspmon>
-            <settings>
+        <system>
+            <cspmon>
+                <enabled>0</enabled>
                 <endpoint></endpoint>
                 <sample_rate>5</sample_rate>
-            </settings>
+            </cspmon>
+        </system>
+        <cspmon>
             <directives>
                 <default_src>
                     <name>default-src</name>

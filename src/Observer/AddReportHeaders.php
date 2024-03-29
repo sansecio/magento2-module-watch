@@ -41,7 +41,7 @@ class AddReportHeaders implements ObserverInterface
         );
         $response->setHeader(
             "Content-Security-Policy-Report-Only",
-            sprintf("%s report-to csp-endpoint", $this->getReportPolicy()),
+            sprintf("%s report-uri %s; report-to csp-endpoint", $this->getReportPolicy(), $this->config->getEndpoint()),
             true
         );
     }

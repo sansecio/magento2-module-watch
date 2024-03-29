@@ -4,7 +4,8 @@
 
 ```bash
 composer require sansec/magento2-module-cspmon
-bin/magento config:set --lock-env cspmon/settings/endpoint https://csp.sansec.io/[ID]
+bin/magento config:set --lock-env system/cspmon/enabled 1
+bin/magento config:set --lock-env system/cspmon/endpoint https://[ID].csp.sansec.io/
 bin/magento setup:upgrade
 ```
 
@@ -24,7 +25,7 @@ server {
     [...]
     location [...] {
         if ($set_csp_headers) {
-            add_header Reporting-Endpoints 'csp-endpoint="https://csp.sansec.io/373b60f0-19a9-476d-8a0e-38fc5433413a"';
+            add_header Reporting-Endpoints 'csp-endpoint="https://[ID].csp.sansec.io/"';
             add_header Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; report-to csp-endpoint";
         }
     }
