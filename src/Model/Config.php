@@ -19,7 +19,7 @@ class Config
         $this->scopeConfig = $scopeConfig;
         $this->shouldReport =
             $this->isEnabled() &&
-            $this->isSample()
+            $this->isSample() &&
             $this->getEndpoint() !== null;
     }
 
