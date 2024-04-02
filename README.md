@@ -31,3 +31,7 @@ server {
     }
 }
 ```
+
+## License
+
+[MIT License](./LICENSE) - Copyright (c) 2024 Sansec
