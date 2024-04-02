@@ -4,9 +4,9 @@
 
 ```console
 composer require sansec/magento2-module-watcher
+bin/magento setup:upgrade
 bin/magento config:set --lock-env system/sansec_watcher/enabled 1
 bin/magento config:set --lock-env system/sansec_watcher/endpoint https://[ID].sansec.watch/
-bin/magento setup:upgrade
 ```
 
 ## Manual Setup
