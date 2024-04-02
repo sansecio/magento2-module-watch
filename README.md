@@ -1,4 +1,4 @@
-# CSP Monitor
+# Sansec Watcher
 
 ## Installation
 
