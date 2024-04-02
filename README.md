@@ -2,7 +2,7 @@
 
 ## Installation
 
-```bash
+```console
 composer require sansec/magento2-module-watcher
 bin/magento config:set --lock-env system/sansec_watcher/enabled 1
 bin/magento config:set --lock-env system/sansec_watcher/endpoint https://[ID].sansec.watch/
@@ -13,7 +13,7 @@ bin/magento setup:upgrade
 
 ### Nginx
 
-```
+```nginx
 map $msec $set_watch_headers {
     default 0;
     "~[1-5]1$" 1; # ~5%
