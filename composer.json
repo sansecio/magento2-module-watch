@@ -10,7 +10,7 @@
       "registration.php"
     ],
     "psr-4": {
-      "Sansec\\Cspmon\\": "src"
+      "Sansec\\Cspmon\\": ""
     }
   },
   "repositories": [
