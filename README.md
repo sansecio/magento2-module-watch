@@ -14,17 +14,14 @@ bin/magento setup:upgrade
 ### Nginx
 
 ```
-map $msec $set_csp_headers {
+map $msec $set_watch_headers {
     default 0;
-    "~[1-5]1$" 1; # 50/10 = ~5%
+    "~[1-5]1$" 1; # ~5%
 }
 
-[...]
-
 server {
-    [...]
     location [...] {
-        if ($set_csp_headers) {
+        if ($set_watch_headers) {
             add_header Reporting-Endpoints 'csp-endpoint="https://[ID].sansec.watch/"';
             add_header Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; report-to csp-endpoint";
         }
