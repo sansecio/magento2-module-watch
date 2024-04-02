@@ -3,9 +3,9 @@
 ## Installation
 
 ```bash
-composer require sansec/magento2-module-cspmon
-bin/magento config:set --lock-env system/cspmon/enabled 1
-bin/magento config:set --lock-env system/cspmon/endpoint https://[ID].csp.sansec.io/
+composer require sansec/magento2-module-watcher
+bin/magento config:set --lock-env system/sansec_watcher/enabled 1
+bin/magento config:set --lock-env system/sansec_watcher/endpoint https://[ID].csp.sansec.io/
 bin/magento setup:upgrade
 ```
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace Sansec\Cspmon\Observer;
+namespace Sansec\Watcher\Observer;
 
 use Magento\Framework\Event\Observer;
 use Magento\Framework\Event\ObserverInterface;
-use Sansec\Cspmon\Model\Config;
+use Sansec\Watcher\Model\Config;
 
 class AddReportHeaders implements ObserverInterface
 {

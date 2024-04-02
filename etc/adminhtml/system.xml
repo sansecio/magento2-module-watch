@@ -2,8 +2,8 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
         <section id="system">
-            <group id="cspmon" translate="label" type="text" sortOrder="2000" showInDefault="1">
-                <label>Cspmon Settings</label>
+            <group id="sansec_watcher" translate="label" type="text" sortOrder="2000" showInDefault="1">
+                <label>Sansec Watcher</label>
                 <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1">
                     <label>Enable</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
