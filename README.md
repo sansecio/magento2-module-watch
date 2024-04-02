@@ -3,9 +3,9 @@
 ## Installation
 
 ```bash
-composer require sansec/magento2-module-cspmon
-bin/magento config:set --lock-env system/cspmon/enabled 1
-bin/magento config:set --lock-env system/cspmon/endpoint https://[ID].csp.sansec.io/
+composer require sansec/magento2-module-watcher
+bin/magento config:set --lock-env system/sansec_watcher/enabled 1
+bin/magento config:set --lock-env system/sansec_watcher/endpoint https://[ID].sansec.watch/
 bin/magento setup:upgrade
 ```
 
@@ -25,7 +25,7 @@ server {
     [...]
     location [...] {
         if ($set_csp_headers) {
-            add_header Reporting-Endpoints 'csp-endpoint="https://[ID].csp.sansec.io/"';
+            add_header Reporting-Endpoints 'csp-endpoint="https://[ID].sansec.watch/"';
             add_header Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; report-to csp-endpoint";
         }
     }
