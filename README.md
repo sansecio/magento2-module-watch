@@ -5,11 +5,7 @@
 ```bash
 composer require sansec/magento2-module-watcher
 bin/magento config:set --lock-env system/sansec_watcher/enabled 1
-<<<<<<< HEAD
-bin/magento config:set --lock-env system/sansec_watcher/endpoint https://[ID].csp.sansec.io/
-=======
 bin/magento config:set --lock-env system/sansec_watcher/endpoint https://[ID].sansec.watch/
->>>>>>> d12c2f339bbeb6260d4749a553d2d80545cb9aac
 bin/magento setup:upgrade
 ```
 
