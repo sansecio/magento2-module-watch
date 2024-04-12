@@ -1,10 +1,10 @@
 <?php
 
-namespace Sansec\Watcher\Plugin;
+namespace Sansec\Watch\Plugin;
 
 use Magento\Csp\Observer\Render;
 use Magento\Framework\Event\Observer;
-use Sansec\Watcher\Model\Config;
+use Sansec\Watch\Model\Config;
 
 class DisableOriginalReport
 {

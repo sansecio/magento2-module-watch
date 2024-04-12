@@ -2,4 +2,4 @@
 
 use Magento\Framework\Component\ComponentRegistrar;
 
-ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Sansec_Watcher', __DIR__);
+ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Sansec_Watch', __DIR__);

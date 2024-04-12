@@ -1,15 +1,15 @@
 <?php
 
-namespace Sansec\Watcher\Model;
+namespace Sansec\Watch\Model;
 
 use Magento\Framework\App\Config\ScopeConfigInterface;
 
 class Config
 {
-    private const CONFIG_PATH_ENABLED     = 'system/sansec_watcher/enabled';
-    private const CONFIG_PATH_ENDPOINT    = 'system/sansec_watcher/endpoint';
-    private const CONFIG_PATH_SAMPLE_RATE = 'system/sansec_watcher/sample_rate';
-    private const CONFIG_PATH_DIRECTIVES  = 'system/sansec_watcher/directives';
+    private const CONFIG_PATH_ENABLED     = 'system/sansec_watch/enabled';
+    private const CONFIG_PATH_ENDPOINT    = 'system/sansec_watch/endpoint';
+    private const CONFIG_PATH_SAMPLE_RATE = 'system/sansec_watch/sample_rate';
+    private const CONFIG_PATH_DIRECTIVES  = 'system/sansec_watch/directives';
 
     private ?bool $shouldReport;
     private ScopeConfigInterface $scopeConfig;

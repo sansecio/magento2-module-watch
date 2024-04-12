@@ -2,7 +2,7 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
         <system>
-            <sansec_watcher>
+            <sansec_watch>
                 <enabled>0</enabled>
                 <endpoint></endpoint>
                 <sample_rate>5</sample_rate>
@@ -20,7 +20,7 @@
                         <allowed_sources>self,unsafe-inline</allowed_sources>
                     </style_src>
                 </directives>
-            </sansec_watcher>
+            </sansec_watch>
         </system>
     </default>
 </config>

@@ -1,5 +1,5 @@
 {
-  "name": "sansec/magento2-module-watcher",
+  "name": "sansec/magento2-module-watch",
   "type": "magento2-module",
   "require": {
     "magento/framework": "*",
@@ -10,7 +10,7 @@
       "registration.php"
     ],
     "psr-4": {
-      "Sansec\\Watcher\\": ""
+      "Sansec\\Watch\\": ""
     }
   },
   "repositories": [

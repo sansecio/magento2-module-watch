@@ -1,10 +1,10 @@
 <?php
 
-namespace Sansec\Watcher\Observer;
+namespace Sansec\Watch\Observer;
 
 use Magento\Framework\Event\Observer;
 use Magento\Framework\Event\ObserverInterface;
-use Sansec\Watcher\Model\Config;
+use Sansec\Watch\Model\Config;
 
 class AddReportHeaders implements ObserverInterface
 {

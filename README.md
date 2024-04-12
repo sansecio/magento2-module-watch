@@ -1,12 +1,12 @@
-# Sansec Watcher
+# Sansec Watch
 
 ## Installation
 
 ```console
-composer require sansec/magento2-module-watcher
+composer require sansec/magento2-module-watch
 bin/magento setup:upgrade
-bin/magento config:set --lock-env system/sansec_watcher/enabled 1
-bin/magento config:set --lock-env system/sansec_watcher/endpoint https://[ID].sansec.watch/
+bin/magento config:set --lock-env system/sansec_watch/enabled 1
+bin/magento config:set --lock-env system/sansec_watch/endpoint https://[ID].sansec.watch/
 bin/magento cache:clean config
 ```
 
