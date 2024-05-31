@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
-    <event name="controller_front_send_response_before">
-        <observer name="add_report_headers" instance="Sansec\Watch\Observer\AddReportHeaders" />
+    <event name="controller_action_predispatch">
+        <observer name="sansec_watch_csp_policy" instance="Sansec\Watch\Observer\CspPolicyObserver" />
     </event>
 </config>

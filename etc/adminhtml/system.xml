@@ -1,28 +1,44 @@
 <?xml version="1.0"?>
+<!--
+    Some parts are copied from:
+        - https://github.com/magento/magento2/blob/2.4.7/app/code/Magento/Csp/etc/adminhtml/system.xml#L10-L33
+        - https://github.com/magento/magento2/blob/2.4.7/app/code/Magento/Checkout/etc/adminhtml/system.xml#L109-L120
+
+    This is to ensure older versions of Magento can set this via config:set and admin panel.
+-->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
-        <section id="system">
-            <group id="sansec_watch" translate="label" type="text" sortOrder="2000" showInDefault="1">
-                <label>Sansec Watch</label>
-                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1">
-                    <label>Enable</label>
-                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                </field>
-                <field id="endpoint" translate="label" type="text" sortOrder="20" showInDefault="1">
-                    <label>Endpoint</label>
-                    <validate>required-entry validate-url</validate>
-                    <depends>
-                        <field id="enabled">1</field>
-                    </depends>
-                </field>
-                <field id="sample_rate" translate="label" type="text" sortOrder="30" showInDefault="1">
-                    <label>Sample Rate</label>
-                    <validate>required-entry validate-digits</validate>
-                    <comment>Percentage of requests that should report to the endpoint.</comment>
-                    <depends>
-                        <field id="enabled">1</field>
-                    </depends>
-                </field>
+        <section id="csp" translate="label" type="text" sortOrder="305" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Content Security Policy (CSP)</label>
+            <tab>security</tab>
+            <resource>Magento_Csp::config</resource>
+            <group id="mode" translate="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Mode</label>
+
+                <group id="storefront" translate="label" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Storefront Default</label>
+                    <field id="report_uri" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Report URI</label>
+                        <comment>URI to report CSP violations on storefront. Used for all storefront pages that don't have own URI configured above.</comment>
+                        <validate>validate-url</validate>
+                    </field>
+
+                    <!-- custom field -->
+                    <field id="report_only" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Report Only</label>
+                        <comment>If set to yes, violations are only reported.</comment>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                </group>
+
+                <group id="storefront_checkout_index_index" translate="label" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <!-- custom field -->
+                    <field id="report_only" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Report Only</label>
+                        <comment>If set to yes, violations are only reported.</comment>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                </group>
             </group>
         </section>
     </system>

@@ -12,18 +12,5 @@
     "psr-4": {
       "Sansec\\Watch\\": ""
     }
-  },
-  "repositories": [
-    {"type": "composer", "url": "https://mirror.mage-os.org/"}
-  ],
-  "config": {
-    "allow-plugins": {
-      "magento/composer-dependency-version-audit-plugin": true,
-      "dealerdirect/phpcodesniffer-composer-installer": true
-    }
-  },
-  "require-dev": {
-    "magento/magento-coding-standard": "^33.0"
-  },
-  "license": "MIT"
+  }
 }
